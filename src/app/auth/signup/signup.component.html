@@ -5,21 +5,27 @@
     #f="ngForm"
     (ngSubmit)="onSubmit(f)"
   >
-    <!-- <input type="text" class=""> -->
-    <mat-form-field hintlabel="Add full email address"> Email*
+    <!-- <input type="text" class=""> --> 
+    <mat-form-field hintlabel="Add full email address">
+      Email*
       <input
-      type="email"
-      matInput
-      placeholder="your@email"
-      ngModel
-      name="email"
-      required
-      #emailInput ="ngModel"
+        type="email"
+        matInput
+        placeholder="your@email.co"
+        ngModel
+        name="email"
+        required
+        #emailInput="ngModel"
       />
-      <mat-error *ngIf="emailInput.hasError('required')">Email is invalid</mat-error>
-      <mat-error *ngIf="!emailInput.hasError('required')">Field must not be empty</mat-error>
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >Email is invalid</mat-error
+      >
+      <mat-error *ngIf="!emailInput.hasError('required')"
+        >Field must not be empty</mat-error
+      >
     </mat-form-field>
-    <mat-form-field hintLabel="Should be at least 6 character long">Password*
+    <mat-form-field hintLabel="Should be at least 6 character long"
+      >Password*
       <input
         type="password"
         matInput
@@ -28,9 +34,9 @@
         name="password"
         required
         minlength="6"
-        #pwdInput ="ngModel"
+        #pwdInput="ngModel"
       />
-      <mat-hint align="end">{{ pwdInput.value?.length}} /6</mat-hint>
+      <mat-hint align="end">{{ pwdInput.value?.length }} /6</mat-hint>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Sumit</button>
   </form>
