@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-
+  maxDate: Date = new Date();
   onSubmit(form: NgForm){
     console.log(form);
   }
