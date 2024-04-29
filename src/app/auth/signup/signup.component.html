@@ -2,6 +2,7 @@
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
+    fxLayoutGap="10px"
     #f="ngForm"
     (ngSubmit)="onSubmit(f)"
   >
@@ -39,11 +40,27 @@
       <mat-hint align="end">{{ pwdInput.value?.length }} /6</mat-hint>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="your birthday" [matDatepicker]="picker" [max]="maxDate" />
+      <input
+        matInput
+        placeholder="your birthday"
+        [matDatepicker]="picker"
+        [max]="maxDate"
+        ngModel
+        name="birthdate"
+        required
+      />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Sumit</button>
+    <mat-checkbox
+      labelPosition="after"
+      required
+      ngModel
+      name="agree"
+      color="primary"
+      >Agree to terms and conditions*.</mat-checkbox
+    >
+  <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Sumit</button>
   </form>
 </section>
