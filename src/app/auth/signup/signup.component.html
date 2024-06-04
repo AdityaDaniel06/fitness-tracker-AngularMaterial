@@ -8,24 +8,24 @@
   >
     <!-- <input type="text" class=""> -->
     <mat-form-field hintlabel="Add full email address">
-      Email*
+      E-mail*
       <input
         type="email"
         matInput
-        placeholder="your@email.co"
+        placeholder="your@email.com"
         ngModel
         name="email"
         required
         #emailInput="ngModel"
       />
       <mat-error *ngIf="emailInput.hasError('required')"
-        >Email is invalid</mat-error
+        >Email is invalid.</mat-error
       >
       <mat-error *ngIf="!emailInput.hasError('required')"
-        >Field must not be empty</mat-error
+        >Field must not be empty.</mat-error
       >
     </mat-form-field>
-    <mat-form-field hintLabel="Should be at least 6 character long"
+    <mat-form-field hintLabel="Should be at least 6 character long."
       >Password*
       <input
         type="password"
@@ -37,7 +37,7 @@
         minlength="6"
         #pwdInput="ngModel"
       />
-      <mat-hint align="end">{{ pwdInput.value?.length }} /6</mat-hint>
+      <mat-hint align="end">{{ pwdInput.value?.length }}/6</mat-hint>
     </mat-form-field>
     <mat-form-field>
       <input
@@ -49,10 +49,12 @@
         name="birthdate"
         required
       />
+      <!-- button that opens the date picker -->
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <!-- intially hidden opens on button click -->
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-
+    <!-- matcheckbox doe snot need ot be encapsulated in mat Form Field -->
     <mat-checkbox
       labelPosition="after"
       required
@@ -61,6 +63,13 @@
       color="primary"
       >Agree to terms and conditions*.</mat-checkbox
     >
-  <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Sumit</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="f.invalid"
+    >
+      Submit
+    </button>
   </form>
 </section>
