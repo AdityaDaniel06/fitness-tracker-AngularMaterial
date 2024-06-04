@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './new-training.component.css'
 })
 export class NewTrainingComponent {
-
+  // foods = [
+  //   {value: 'steak-0', viewValue: 'Steak'},
+  //   {value: 'pizza-1', viewValue: 'Pizza'},
+  //   {value: 'tacos-2', viewValue: 'Tacos'},
+  // ];
 }

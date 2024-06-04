@@ -1,1 +1,23 @@
-<p>new-training works!</p>
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex="90%">
+    <mat-card-title fxLayoutAlign="center"> Time to train! </mat-card-title>
+    <mat-card-content fxLayoutAlign="center">What's the mood today?
+        <mat-form-field>
+            <mat-label >Favorite food</mat-label>
+            <mat-select>
+              <!-- @for (food of foods; track food) {
+                <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+              } -->
+              <mat-option value="cycling">Cycling</mat-option>
+              <mat-option value="treadmill">Treadmill</mat-option>
+              <mat-option value="stairClimber">Stair-Climber</mat-option>
+              <mat-option value="ropes">Ropes</mat-option>
+            </mat-select>
+          </mat-form-field> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-stroked-button color="primary" type="submit">Start</button>
+        <button mat-stroked-button color="warn">Stop</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
