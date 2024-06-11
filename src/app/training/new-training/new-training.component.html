@@ -1,10 +1,10 @@
 <section class="new-training" fxLayout fxLayoutAlign="center">
-  <mat-card fxFlex="90%">
-    <mat-card-title fxLayoutAlign="center"> Time to train! </mat-card-title>
-    <mat-card-content fxLayoutAlign="center">What's the mood today?
+  <mat-card fxFlex="90%" fsFlex.xs="100%">
+    <mat-card-title fxLayoutAlign="start"> Time to train! </mat-card-title>
+    <mat-card-content >What's the mood today?
         <mat-form-field>
-            <mat-label >Favorite food</mat-label>
-            <mat-select>
+            <!-- <mat-label >Favorite food</mat-label> -->
+            <mat-select placeholder="Cardio">
               <!-- @for (food of foods; track food) {
                 <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
               } -->
@@ -16,8 +16,8 @@
           </mat-form-field> 
     </mat-card-content>
     <mat-card-actions>
-        <button mat-stroked-button color="primary" type="submit">Start</button>
-        <button mat-stroked-button color="warn">Stop</button>
+        <button mat-stroked-button color="primary" type="submit" (click)="onStartTraining()">Start</button>
+        <button mat-stroked-button color="warn">Cancel</button>
     </mat-card-actions>
   </mat-card>
 </section>
